@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://www.midorg.com/flex.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flex 布局</title>
+    <meta name="description" content="Re01 编程课的Flex布局演示。">
+    <link rel="icon" href="https://www.midorg.com/favicon.ico">
+    <link rel="manifest" href="https://www.midorg.com/manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.midorg.com/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.midorg.com/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.midorg.com/favicon-16x16.png">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+      body {
+        margin: 0;
+        /* vh 是view height 既视窗高度的意思，100就是100%占满窗口高度 */
+        height: 100vh;
+        background-color: #eee;
+      }
+      /* * {
+        border: 1px solid #333;
+      } */
+      .flex {
+        display: flex;
+      }
+      /* 占满比例 */
+      .flex1 {
+        flex: 1;
+      }
+      /* 竖向 */
+      .column {
+        flex-direction: column;
+      }
+      /* 阴影 */
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+      /* 白色背景 */
+      .baiSe {
+        background-color: #fff;
+      }
+      /* 上下左右外边距 */
+      .mg8 {
+        margin: 8px;
+      }
+      /* 右外边距 */
+      .mgr8 {
+        margin-right: 8px;
+      }
+      /* 上外边距 */
+      .mgt8 {
+        margin-top: 8px;
+      }
+      /* 四个小盒子 */
+      .shuJu {
+        height: 100px;
+      }
+      /* 中间的大盒子 */
+      .lieBiaoXiang {
+        height: 160px;
+      }
+      /* 导航条 */
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(201, 201, 201);
+        font-size: 14px;
+        color: #666;
+      }
+      .neiRong::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+
+      /* 当屏幕宽度小于600px时要改变的css */
+      @media (max-width: 600px) {
+        /* 小屏幕上取消侧边栏，后面学js时会教怎么弹出 */
+        .ceBian {
+          display: none;
+        }
+        /* 内容栏和数据栏flex方向改为竖向 */
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        /* 右区加左外边距 */
+        .youQu {
+          margin-left: 8px;
+        }
+        /* 数据块外边距，大小改为自动宽高 */
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    
+    <!-- 主区域 -->
+    <div class="flex flex1 column">
+      <!-- 头部栏 -->
+      <div style="height: 100px; z-index: 2" class="baiSe yinYing">
+		  <div style="display: flex; flex-direction: row; justify-content: center; align-items: center; align-self: center;">
+			  <img  style="-webkit-border-radius: 360px;-moz-border-radius: 360px;border-radius: 360px;" height="50" width="50" src="http://img.duoziwang.com/2017/06/13/B13210329.jpg"/>
+			  <h3 >tomato</h3>
+		  </div>
+		  
+	  </div>
+      <!-- 内容区 -->
+      <div class="flex flex1 neiRong" style="overflow: auto">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          
+          <!-- 列表区，列表数据可以无限增加 -->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+				<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+				    <h3 >大家好，这是我的第一个网页</h3>
+				</div>
+			</div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+				<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+				    <h5 >网页还在持续完善，以后会越来越好</h5>
+				</div>
+			</div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing">
+				<div style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+				    <footer >
+				      <p class="copyright">我的github地址：<a href="https://github.com/TomatoDang66">TomatoDang66</a></p>
+				    </footer>
+				</div>
+			</div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        
+      </div>
+    </div>
+  
+
+</body></html>
